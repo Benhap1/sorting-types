@@ -2,7 +2,7 @@ package org.sorting;
 
 public class BubbleSorting {
 
-    public int[] bubbleSorting(int[] arr) {
+    public void bubbleSorting(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -13,6 +13,5 @@ public class BubbleSorting {
                 }
             }
         }
-        return arr;
     }
 }

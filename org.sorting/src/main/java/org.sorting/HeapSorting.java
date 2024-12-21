@@ -2,7 +2,7 @@ package org.sorting;
 
 public class HeapSorting {
 
-    public int[] heapSorting(int[] arr) {
+    public void heapSorting(int[] arr) {
         int n = arr.length;
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
@@ -13,7 +13,6 @@ public class HeapSorting {
             arr[i] = temp;
             heapify(arr, i, 0);
         }
-        return arr;
     }
 
     public void heapify(int[] arr, int n, int i) {

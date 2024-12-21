@@ -2,14 +2,13 @@ package org.sorting;
 
 public class MergeSort {
 
-    public int[] mergeSort(int[] arr, int left, int right) {
+    public void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
             mergeSort(arr, left, mid);
             mergeSort(arr, mid + 1, right);
             merge(arr, left, mid, right);
         }
-        return arr;
     }
 
     public void merge(int[] arr, int left, int mid, int right) {
@@ -17,9 +16,7 @@ public class MergeSort {
         int n2 = right - mid;
         int[] leftArr = new int[n1];
         int[] rightArr = new int[n2];
-        for (int i = 0; i < n1; i++) {
-            leftArr[i] = arr[left + i];
-        }
+        System.arraycopy(arr, left, leftArr, 0, n1);
         for (int j = 0; j < n2; j++) {
             rightArr[j] = arr[mid + 1 + j];
         }

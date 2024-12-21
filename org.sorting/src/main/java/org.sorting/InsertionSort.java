@@ -1,7 +1,7 @@
 package org.sorting;
 
 public class InsertionSort {
-    public int[] insertionSort(int[] arr) {
+    public void insertionSort(int[] arr) {
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             int key = arr[i];
@@ -12,6 +12,5 @@ public class InsertionSort {
             }
             arr[j + 1] = key;
         }
-        return arr;
     }
 }

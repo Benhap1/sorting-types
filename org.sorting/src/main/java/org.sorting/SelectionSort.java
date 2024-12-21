@@ -2,7 +2,7 @@ package org.sorting;
 
 public class SelectionSort {
 
-    public int[] selectionSort(int[] arr) {
+    public void selectionSort(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
@@ -15,6 +15,5 @@ public class SelectionSort {
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
         }
-        return arr;
     }
 }

@@ -2,13 +2,12 @@ package org.sorting;
 
 public class QuickSorting {
 
-    public int[] quickSorting(int[] arr, int left, int right) {
+    public void quickSorting(int[] arr, int left, int right) {
         if (left < right) {
             int pivot = partition(arr, left, right);
             quickSorting(arr, left, pivot - 1);
             quickSorting(arr, pivot + 1, right);
         }
-        return arr;
     }
 
     public int partition(int[] arr, int left, int right) {
