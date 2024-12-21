@@ -28,12 +28,12 @@ public class Main {
         List<Callable<Long>> tasks = new ArrayList<>();
 
         // Add sorting tasks using a loop to reduce repetition
-        tasks.add(createSortingTask(originalArray, new BubbleSorting(), "Bubble Sort"));
-        tasks.add(createSortingTask(originalArray, new SelectionSort(), "Selection Sort"));
-        tasks.add(createSortingTask(originalArray, new InsertionSort(), "Insertion Sort"));
-        tasks.add(createSortingTask(originalArray, new MergeSort(), "Merge Sort"));
-        tasks.add(createSortingTask(originalArray, new QuickSorting(), "Quick Sort"));
-        tasks.add(createSortingTask(originalArray, new HeapSorting(), "Heap Sort"));
+        tasks.add(createSortingTask(originalArray, new BubbleSorting()));
+        tasks.add(createSortingTask(originalArray, new SelectionSort()));
+        tasks.add(createSortingTask(originalArray, new InsertionSort()));
+        tasks.add(createSortingTask(originalArray, new MergeSort()));
+        tasks.add(createSortingTask(originalArray, new QuickSorting()));
+        tasks.add(createSortingTask(originalArray, new HeapSorting()));
 
         // Run the tasks and get the durations
         List<Future<Long>> futures = executorService.invokeAll(tasks);
@@ -56,7 +56,7 @@ public class Main {
     }
 
     // Helper method to create sorting tasks
-    private static Callable<Long> createSortingTask(int[] originalArray, Object sorter, String methodName) {
+    private static Callable<Long> createSortingTask(int[] originalArray, Object sorter) {
         return () -> {
             int[] arrayCopy = Arrays.copyOf(originalArray, originalArray.length);
             long startTime = System.nanoTime();
